@@ -1,5 +1,5 @@
 {
-    "name": "com.vrsuya.core",
+    "name": "macchiato.core",
     "rootNamespace": "",
     "references": [
         "GUID:5718fb738711cd34ea54e9553040911d"

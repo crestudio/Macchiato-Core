@@ -1,24 +1,24 @@
-﻿#if UNITY_EDITOR
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
 
-using static VRC.SDK3.Avatars.Components.VRCAvatarDescriptor;
 using VRC.SDK3.Avatars.ScriptableObjects;
+using static VRC.SDK3.Avatars.Components.VRCAvatarDescriptor;
 
 using Object = UnityEngine.Object;
 
 /*
- * VRSuya Core
- * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
+ * Macchiato Core
+ * Contact : crestudioplus@gmail.com // Twitter : https://twitter.com/VRC_Macchiato
  */
 
-namespace VRSuya.Core {
+namespace Macchiato.Core {
 
 	public static class AssetUtility {
 
@@ -209,6 +209,11 @@ namespace VRSuya.Core {
 			}
 			return string.Join("_", AssetNameParts);
 		}
+
+		public static string SanitizeString(string TargetString) {
+			string InvalidCharacters = Regex.Escape(new string(Path.GetInvalidFileNameChars()));
+			string InvalidPattern = string.Format(@"[{0}]", InvalidCharacters);
+			return Regex.Replace(TargetString, InvalidPattern, string.Empty);
+		}
 	}
 }
-#endif

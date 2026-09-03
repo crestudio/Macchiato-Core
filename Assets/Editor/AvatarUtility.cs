@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,11 +12,11 @@ using VRC.SDK3.Avatars.Components;
 using static VRC.SDK3.Avatars.Components.VRCAvatarDescriptor;
 
 /*
- * VRSuya Core
- * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
+ * Macchiato Core
+ * Contact : crestudioplus@gmail.com // Twitter : https://twitter.com/VRC_Macchiato
  */
 
-namespace VRSuya.Core {
+namespace Macchiato.Core {
 
 	public static class AvatarUtility {
 
@@ -293,4 +292,3 @@ namespace VRSuya.Core {
 		}
 	}
 }
-#endif

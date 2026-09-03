@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +8,11 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 
 /*
- * VRSuya Core
- * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
+ * Macchiato Core
+ * Contact : crestudioplus@gmail.com // Twitter : https://twitter.com/VRC_Macchiato
  */
 
-namespace VRSuya.Core {
+namespace Macchiato.Core {
 
 	public static class UnityUtility {
 
@@ -154,4 +153,3 @@ namespace VRSuya.Core {
 		}
 	}
 }
-#endif

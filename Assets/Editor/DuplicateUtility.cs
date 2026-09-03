@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using System;
+﻿using System;
 
 using UnityEditor;
 using UnityEngine;
@@ -7,12 +6,12 @@ using UnityEngine;
 using Object = UnityEngine.Object;
 
 /*
- * VRSuya Core
- * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
+ * Macchiato Core
+ * Contact : crestudioplus@gmail.com // Twitter : https://twitter.com/VRC_Macchiato
  * Forked from ModLunar ( https://forum.unity.com/threads/solved-duplicate-prefab-issue.778553/ )
  */
 
-namespace VRSuya.Core {
+namespace Macchiato.Core {
 
 	public static class DuplicateUtility {
 
@@ -36,4 +35,3 @@ namespace VRSuya.Core {
 		}
 	}
 }
-#endif

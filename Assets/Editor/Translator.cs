@@ -1,19 +1,18 @@
-﻿#if UNITY_EDITOR
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
 using UnityEditor;
 using UnityEngine;
 
-using static VRSuya.Core.AvatarUtility;
+using static Macchiato.Core.AvatarUtility;
 
 /*
- * VRSuya Core
- * Contact : vrsuya@gmail.com // Twitter : https://twitter.com/VRSuya
+ * Macchiato Core
+ * Contact : crestudioplus@gmail.com // Twitter : https://twitter.com/VRC_Macchiato
  */
 
-namespace VRSuya.Core {
+namespace Macchiato.Core {
 
 	public static class Translator {
 
@@ -144,96 +143,6 @@ namespace VRSuya.Core {
 			{ "String_Undo", "Undo" },
 			{ "String_Update", "Update" },
 
-			// AnimatedHairPhysBone
-			{ "String_PhysBoneName", "PhysBone Name" },
-
-			// AnimatedPhysBone
-			{ "String_AnimatedPhysBone", "When uploading the avatar, the Animated property of PhysBone components on cheek bones will be enabled." },
-
-			// AnimatorView
-			{ "String_FollowGameObject", "Follow GameObject" },
-			{ "String_LockRotation", "Lock Camera Rotation" },
-
-			// AvatarPatcher
-			{ "String_AvatarPatcher", "This tool is currently under development, We're working to release an update as soon as possible" },
-			{ "COMPLETED_PATCH", "The {0} avatar has been patched" },
-
-			// AvatarRebuilder
-			{ "String_AvatarRebuilder", "This tool is used to replace avatar models that have been patched in Blender\nIf you want to patch your avatar directly in Unity, please use the following menu instead of this tool\nTools → VRSuya → Installer → HDiffPatcher" },
-			{ "NO_NEW_ANIMATOR", "Not found Animator Component in the New Avatar" },
-			{ "NO_NEW_AVATAR", "No New Avatar is selected" },
-			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "No matching SkinnedMeshRenderer was found" },
-			{ "NO_OLD_ANIMATOR", "Not found Animator Component in the Original Avatar" },
-			{ "NO_OLD_AVATAR_SCENE", "The avatar is not placed in the scene" },
-			{ "NO_OLD_AVATAR", "No Avatar is selected" },
-			{ "SAME_AVATAR", "Same as the original avatar! Select a new GameObject of the same avatar" },
-
-			// AvatarScaler
-			{ "String_AvatarHeight", "Avatar Height (cm)" },
-
-			// AvatarSettingUpdater
-			{ "String_AvatarSettingUpdater", "The latest VRSuya items are now configured automatically during avatar upload, similar to Modular Avatar-compatible items. AvatarSettingUpdater is no longer used." },
-			{ "String_OpenBOOTH", "Open BOOTH" },
-
-			// ChangeStandingPose
-			{ "String_ChangeStandingPose", "Replaces the default VRChat standing pose in the Action Layer with the avatar's standing pose." },
-
-			// ConstraintConnector
-			{ "String_LeftHand", "Left Hand" },
-			{ "String_RightHand", "Right Hand" },
-
-			// FixFacialAnimation
-			{ "String_AddBlink", "Add Blink Shapekey" },
-			{ "String_AddLayerControl", "Add Layer Control" },
-			{ "String_GetAvatarData", "Get Avatar Data" },
-			{ "String_LayerIndex", "Layer Index" },
-
-			// ForceOnWriteDefaults
-			{ "String_ForceOnWriteDefaults", "Sets Write Defaults to ON for the FX layer.\nSome avatar gimmicks may not function correctly as a result. If this occurs, removing this component will resolve the issue; however, facial expression animations provided by VRSuya items may no longer work correctly." },
-
-			// HDiffPatcher
-			{ "String_HDiffPatcher", "Patches can only be applied to the original avatar model file\nIf the model file has been modified (like facial patch), use the AvatarPatcher add-on in Blender to patch the modified model, then replace the avatar model using AvatarRebuilder" },
-			{ "String_PatchData", "Patch Data" },
-			{ "String_ReplaceAfterPatch", "Replace Avatar After Patching" },
-			{ "ERROR_CONSOLE", "An error occurred while patching the avatar! Please check the error message in the Unity Console window" },
-			{ "ERROR_FAILEDRUN", "Failed to launch HDiffPatch" },
-			{ "ERROR_FBX", "The source file path is invalid" },
-			{ "ERROR_HDIFF", "The HDiff patch file path is invalid" },
-			{ "ERROR_NOHDIFFPATCH", "Could not find the HDiffPatch executable" },
-			{ "ERROR_NOPERMISSION", "Failed to grant execute permission to HDiffPatch" },
-			{ "ERROR_OUTPUTPATH", "Exporting is only supported within the Unity project's Assets folder, Please select a different path" },
-			{ "ERROR_PLATFORM", "HDiffPatch supports Windows, macOS, and Linux only" },
-			{ "ERROR_TIMEDOUT", "The HDiffPatch process timed out" },
-			{ "NOT_MATCH", "Failed to apply the HDiff patch because the selected source file does not match the patch, Please select the correct source file" },
-
-			// MenuSelector
-			{ "String_MenuLanguage", "Menu Language" },
-
-			// PhysBoneConnector
-			{ "String_PhysBoneType", "PhysBone Type" },
-			{ "String_LeftCheek", "Left Cheek" },
-			{ "String_RightCheek", "Right Cheek" },
-			{ "String_LeftToe", "Left Toe" },
-			{ "String_RightToe", "Right Toe" },
-			{ "String_LeftThumbToe", "Left Thumb Toe" },
-			{ "String_RightThumbToe", "Right Thumb Toe" },
-			{ "String_LeftIndexToe", "Left Index Toe" },
-			{ "String_RightIndexToe", "Right Index Toe" },
-			{ "String_LeftMiddleToe", "Left Middle Toe" },
-			{ "String_RightMiddleToe", "Right Middle Toe" },
-			{ "String_LeftRingToe", "Left Ring Toe" },
-			{ "String_RightRingToe", "Right Ring Toe" },
-			{ "String_LeftLittleToe", "Left Little Toe" },
-			{ "String_RightLittleToe", "Right Little Toe" },
-
-			// RemoveAnimatorLayer
-			{ "String_LayerName", "Layer Name" },
-
-			// RemoveFXMask
-			{ "String_RemoveFXMask", "Removes the mask if one is assigned to the FX layer." },
-
-			// RemovePhysBone
-			{ "String_RemovePhysBone", "When uploading the avatar, PhysBone components on cheek bones will be removed." },
 
 			// TextureReplacer
 			{ "String_Null", "Clearing the item will remove the texture from the material" },
@@ -291,96 +200,6 @@ namespace VRSuya.Core {
 			{ "String_Undo", "실행 취소" },
 			{ "String_Update", "업데이트" },
 
-			// AnimatedHairPhysBone
-			{ "String_PhysBoneName", "PhysBone 이름" },
-
-			// AnimatedPhysBone
-			{ "String_AnimatedPhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트의 Animated 속성을 활성화 합니다" },
-
-			// AnimatorView
-			{ "String_FollowGameObject", "GameObject 추적" },
-			{ "String_LockRotation", "카메라 회전 고정" },
-
-			// AvatarPatcher
-			{ "String_AvatarPatcher", "현재 프로그램은 개발 중입니다, 빠르게 업데이트 할 수 있도록 하겠습니다" },
-			{ "COMPLETED_PATCH", "{0} 아바타를 패치하였습니다" },
-
-			// AvatarRebuilder
-			{ "String_AvatarRebuilder", "Blender에서 패치한 아바타 모델을 교체하기 위한 프로그램 입니다\nUnity에서 바로 아바타를 패치하시려면, 현재 프로그램 대신 아래의 메뉴를 이용하여 아바타 모델 패치를 진행해 주세요\nTools → VRSuya → Installer → HDiffPatcher" },
-			{ "NO_NEW_ANIMATOR", "새 아바타에서 애니메이터를 찾을 수 없습니다" },
-			{ "NO_NEW_AVATAR", "새 아바타가 지정되지 않았습니다" },
-			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "서로 매치가 되는 SkinnedMeshRenderer가 존재하지 않습니다" },
-			{ "NO_OLD_ANIMATOR", "원본 아바타에서 애니메이터를 찾을 수 없습니다" },
-			{ "NO_OLD_AVATAR_SCENE", "아바타가 Scene에 위치하고 있지 않습니다" },
-			{ "NO_OLD_AVATAR", "아바타가 지정되지 않았습니다" },
-			{ "SAME_AVATAR", "원본과 같은 아바타입니다, 복구하려는 아바타와 같은 종류의 아바타를 만들어 넣어주세요" },
-
-			// AvatarScaler
-			{ "String_AvatarHeight", "아바타 키 (cm)" },
-
-			// AvatarSettingUpdater
-			{ "String_AvatarSettingUpdater", "최신 VRSuya 아이템은 모듈러 아바타 대응 아이템처럼 이제 아바타 업로드시에 자동으로 설정합니다, AvatarSettingUpdater는 더 이상 사용하지 않습니다" },
-			{ "String_OpenBOOTH", "BOOTH 열기" },
-
-			// ChangeStandingPose
-			{ "String_ChangeStandingPose", "액션 레이어의 기본 VRChat 스탠드 포즈를 아바타의 스탠드 포즈로 바꿉니다" },
-
-			// ConstraintConnector
-			{ "String_LeftHand", "왼손" },
-			{ "String_RightHand", "오른손" },
-
-			// FixFacialAnimation
-			{ "String_AddBlink", "블링크 쉐이프키 추가" },
-			{ "String_AddLayerControl", "레이어 컨트롤 추가" },
-			{ "String_GetAvatarData", "아바타 데이터 업데이트" },
-			{ "String_LayerIndex", "레이어 인덱스" },
-
-			// ForceOnWriteDefaults
-			{ "String_ForceOnWriteDefaults", "FX 레이어를 Write Defaults를 ON으로 설정합니다\n일부 아바타의 기믹이 제대로 동작하지 않을 수 있습니다, 이러한 경우에는 현재 컴포넌트를 제거하면 문제가 해결이 되나 VRSuya 아이템의 표정 애니메이션이 제대로 동작하지 않습니다" },
-
-			// HDiffPatcher
-			{ "String_HDiffPatcher", "순정 아바타 모델 파일만 패치를 적용할 수 있습니다\n페이셜 패치 등으로 모델 파일을 수정한 경우에는 Blender에서 AvatarPatcher 애드온으로 수정된 모델으로 패치를 진행한 모델 파일로 AvatarRebuilder에서 교체 작업을 해야 합니다" },
-			{ "String_PatchData", "패치 데이터" },
-			{ "String_ReplaceAfterPatch", "패치 후 아바타 교체" },
-			{ "ERROR_CONSOLE", "아바타 패치 도중 에러가 발생하였습니다, Unity의 Console 창에서 오류 메시지를 확인해 주세요" },
-			{ "ERROR_FAILEDRUN", "HDiffPatch를 실행하는데 실패하였습니다" },
-			{ "ERROR_FBX", "원본 파일의 경로가 올바르지 않습니다" },
-			{ "ERROR_HDIFF", "HDiff 패치 파일의 경로가 올바르지 않습니다" },
-			{ "ERROR_NOHDIFFPATCH", "HDiffPatch 실행 파일을 찾을 수 없습니다" },
-			{ "ERROR_NOPERMISSION", "HDiffPatch 실행 권한 부여에 실패하였습니다" },
-			{ "ERROR_OUTPUTPATH", "Unity 프로젝트의 Assets 폴더 내부로만 내보내기를 할 수 있습니다, 다시 경로를 지정해 주세요" },
-			{ "ERROR_PLATFORM", "HDiffPatch는 윈도우, 맥, 리눅스만 지원합니다" },
-			{ "ERROR_TIMEDOUT", "HDiffPatch 프로세스의 작업 시간을 초과하였습니다" },
-			{ "NOT_MATCH", "선택한 원본 파일이 패치 데이터와 일치하지 않아 HDiff 패치를 적용할 수 없었습니다, 올바른 원본 파일을 선택해 주세요" },
-
-			// MenuSelector
-			{ "String_MenuLanguage", "메뉴 언어" },
-
-			// PhysBoneConnector
-			{ "String_PhysBoneType", "PhysBone 종류" },
-			{ "String_LeftCheek", "왼쪽 볼" },
-			{ "String_RightCheek", "오른쪽 볼" },
-			{ "String_LeftToe", "왼쪽 발가락" },
-			{ "String_RightToe", "오른쪽 발가락" },
-			{ "String_LeftThumbToe", "왼쪽 엄지 발가락" },
-			{ "String_RightThumbToe", "오른쪽 엄지 발가락" },
-			{ "String_LeftIndexToe", "왼쪽 검지 발가락" },
-			{ "String_RightIndexToe", "오른쪽 검지 발가락" },
-			{ "String_LeftMiddleToe", "왼쪽 중지 발가락" },
-			{ "String_RightMiddleToe", "오른쪽 중지 발가락" },
-			{ "String_LeftRingToe", "왼쪽 약지 발가락" },
-			{ "String_RightRingToe", "오른쪽 약지 발가락" },
-			{ "String_LeftLittleToe", "왼쪽 소지 발가락" },
-			{ "String_RightLittleToe", "오른쪽 소지 발가락" },
-
-			// RemoveAnimatorLayer
-			{ "String_LayerName", "레이어 이름" },
-
-			// RemoveFXMask
-			{ "String_RemoveFXMask", "FX 레이어에 마스크가 할당되어 있는 경우 마스크를 삭제를 합니다" },
-
-			// RemovePhysBone
-			{ "String_RemovePhysBone", "아바타 업로드 할 때, 볼 본의 PhysBone 컴포넌트들을 제거합니다" },
 
 			// TextureReplacer
 			{ "String_Null", "항목을 비우면 해당 텍스쳐를 머테리얼에서 제거합니다" },
@@ -438,96 +257,6 @@ namespace VRSuya.Core {
 			{ "String_Undo", "元に戻す" },
 			{ "String_Update", "アップデート" },
 
-			// AnimatedHairPhysBone
-			{ "String_PhysBoneName", "PhysBone名" },
-
-			// AnimatedPhysBone
-			{ "String_AnimatedPhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントのAnimatedプロパティが有効化されます" },
-
-			// AnimatorView
-			{ "String_FollowGameObject", "GameObjectを追従" },
-			{ "String_LockRotation", "カメラ回転固定" },
-
-			// AvatarPatcher
-			{ "String_AvatarPatcher", "このツールは現在開発中です、できるだけ早く公開できるよう開発を進めております" },
-			{ "COMPLETED_PATCH", "{0}アバターをパッチしました" },
-
-			// AvatarRebuilder
-			{ "String_AvatarRebuilder", "このツールはBlenderでパッチを適用したアバターモデルを差し替えるためのツールです\nUnity上で直接アバターをパッチしたい場合は、このツールではなく、以下のメニューからアバターモデルのパッチを実行してください\nTools → VRSuya → Installer → HDiffPatcher" },
-			{ "NO_NEW_ANIMATOR", "新しいアバターにアニメーターが見つかりません" },
-			{ "NO_NEW_AVATAR", "新しいアバターが指定されていません" },
-			{ "NO_MATCHED_SKINNEDMESHRENDERERS", "対応するSkinnedMeshRendererが見つかりません" },
-			{ "NO_OLD_ANIMATOR", "元のアバターにアニメーターが見つかりません" },
-			{ "NO_OLD_AVATAR_SCENE", "アバターがシーン内に配置されていません" },
-			{ "NO_OLD_AVATAR", "アバターが指定されていません" },
-			{ "SAME_AVATAR", "原本と同じアバターです、復旧したいアバターと同じ種類のアバターを作って入れてください" },
-
-			// AvatarScaler
-			{ "String_AvatarHeight", "アバターの高さ (cm)" },
-
-			// AvatarSettingUpdater
-			{ "String_AvatarSettingUpdater", "最新のVRSuyaアイテムはModular Avatar対応アイテムと同様に、アバターのアップロード時に自動で設定されるようになりました、AvatarSettingUpdaterは今後使用されません" },
-			{ "String_OpenBOOTH", "BOOTHを開く" },
-
-			// ChangeStandingPose
-			{ "String_ChangeStandingPose", "Actionレイヤー内のデフォルトVRChatスタンドポーズを、アバターのスタンドポーズに変更します" },
-
-			// ConstraintConnector
-			{ "String_LeftHand", "左手" },
-			{ "String_RightHand", "右手" },
-
-			// FixFacialAnimation
-			{ "String_AddBlink", "まばたきシェイプキーを追加" },
-			{ "String_AddLayerControl", "レイヤーコントロールを追加" },
-			{ "String_GetAvatarData", "アバターデータを追加" },
-			{ "String_LayerIndex", "レイヤーインデックス" },
-
-			// ForceOnWriteDefaults
-			{ "String_ForceOnWriteDefaults", "FXレイヤーのWrite DefaultsをONに設定します\nその影響により、一部のアバターギミックが正常に動作しなくなる場合があります、その場合は、このコンポーネントを削除することで問題を解決できますが、VRSuyaアイテムの表情アニメーションが正常に動作しなくなる可能性があります" },
-			
-			// HDiffPatcher
-			{ "String_HDiffPatcher", "パッチはオリジナルのアバターモデルファイルにのみ適用できます\nフェイシャルパッチなどでモデルファイルを変更している場合は、BlenderのAvatarPatcherアドオンを使用して変更済みモデルにパッチを適用し、その後AvatarRebuilderでアバターモデルを差し替えてください" },
-			{ "String_PatchData", "パッチデータ" },
-			{ "String_ReplaceAfterPatch", "パッチ後にアバターを置き換える" },
-			{ "ERROR_CONSOLE", "アバターのパッチ中にエラーが発生しました！UnityのConsoleウィンドウでエラーメッセージを確認してください" },
-			{ "ERROR_FAILEDRUN", "HDiffPatchの起動に失敗しました" },
-			{ "ERROR_FBX", "元ファイルのパスが無効です" },
-			{ "ERROR_HDIFF", "HDiffパッチファイルのパスが無効です" },
-			{ "ERROR_NOHDIFFPATCH", "HDiffPatchの実行ファイルが見つかりません" },
-			{ "ERROR_NOPERMISSION", "HDiffPatchへの実行権限の付与に失敗しました" },
-			{ "ERROR_OUTPUTPATH", "UnityプロジェクトのAssetsフォルダー内にのみエクスポートできます、パスを再指定してください" },
-			{ "ERROR_PLATFORM", "HDiffPatchはWindows、macOS、Linuxのみサポートしています" },
-			{ "ERROR_TIMEDOUT", "HDiffPatchプロセスがタイムアウトしました" },
-			{ "NOT_MATCH", "選択された元ファイルがパッチと一致しないため、HDiffパッチを適用できませんでした、正しい元ファイルを選択してください" },
-
-			// MenuSelector
-			{ "String_MenuLanguage", "メニュー言語" },
-
-			// PhysBoneConnector
-			{ "String_PhysBoneType", "PhysBoneタイプ" },
-			{ "String_LeftCheek", "左頬" },
-			{ "String_RightCheek", "右頬" },
-			{ "String_LeftToe", "左指" },
-			{ "String_RightToe", "右指" },
-			{ "String_LeftThumbToe", "左親指" },
-			{ "String_RightThumbToe", "右親指" },
-			{ "String_LeftIndexToe", "左人差し指" },
-			{ "String_RightIndexToe", "右人差し指" },
-			{ "String_LeftMiddleToe", "左中指" },
-			{ "String_RightMiddleToe", "右中指" },
-			{ "String_LeftRingToe", "左薬指" },
-			{ "String_RightRingToe", "右薬指" },
-			{ "String_LeftLittleToe", "左小指" },
-			{ "String_RightLittleToe", "右小指" },
-
-			// RemoveAnimatorLayer
-			{ "String_LayerName", "レイヤー名" },
-
-			// RemoveFXMask
-			{ "String_RemoveFXMask", "FXレイヤーにマスクが割り当てられている場合、マスクを削除します" },
-
-			// RemovePhysBone
-			{ "String_RemovePhysBone", "アバターをアップロードする際、頬ボーンのPhysBoneコンポーネントは削除されます" },
 
 			// TextureReplacer
 			{ "String_Null", "項目をクリアすると、該当テクスチャがマテリアルから削除されます" },
@@ -652,4 +381,3 @@ namespace VRSuya.Core {
 		};
 	}
 }
-#endif
