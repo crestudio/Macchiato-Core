@@ -181,6 +181,7 @@ namespace Macchiato.Core {
 		}
 
 		public static Material[] GetAvatarMaterials(GameObject AvatarGameObject) {
+			if (!AvatarGameObject) return null;
 			List<Material> NewAvatarMaterials = new List<Material>();
 			SkinnedMeshRenderer[] AvatarSkinnedMeshRenderers = AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true);
 			MeshRenderer[] AvatarMeshRenderers = AvatarGameObject.GetComponentsInChildren<MeshRenderer>(true);
