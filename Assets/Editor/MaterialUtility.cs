@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+
+using UnityEngine;
 
 /*
  * Macchiato Core
@@ -9,7 +11,22 @@ namespace Macchiato.Core {
 
 	public static class MaterialUtility {
 
+		public enum ShaderType {
+			Unknown,
+			lilToon,
+			poiyomi,
+			UnityChanToonShader
+		}
+
 		public static bool ApplyValueAfterCheck = true;
+
+		public static ShaderType GetShaderType(Material TargetMaterial) {
+			string TargetShaderName = TargetMaterial.shader.name;
+			if (TargetShaderName.Contains("lilToon", StringComparison.OrdinalIgnoreCase)) return ShaderType.lilToon;
+			if (TargetShaderName.Contains("poiyomi", StringComparison.OrdinalIgnoreCase)) return ShaderType.poiyomi;
+			if (TargetShaderName.Contains("UnityChanToonShader", StringComparison.OrdinalIgnoreCase)) return ShaderType.UnityChanToonShader;
+			return ShaderType.Unknown;
+		}
 
 		public static bool IsPropertyActive(Material TargetMaterial, string TargetPropertyName, float TargetValue = 1f) {
 			if (!ApplyValueAfterCheck) return true;
