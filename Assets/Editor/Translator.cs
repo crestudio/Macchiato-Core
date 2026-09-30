@@ -130,6 +130,10 @@ namespace Macchiato.Core {
 			{ "String_Undo", "Undo" },
 			{ "String_Update", "Update" },
 
+			// GUIDUtility
+			{ "String_InputGUID", "Please enter a GUID" },
+			{ "NO_GUID", "Could not find an asset path for the specified GUID!" },
+
 			// MaterialTemplate
 			{ "String_ReferenceMaterial", "Reference Material" },
 			{ "String_GetAvatarMaterials", "Get Avatar Materials" },
@@ -231,6 +235,10 @@ namespace Macchiato.Core {
 			{ "String_Undo", "실행 취소" },
 			{ "String_Update", "업데이트" },
 
+			// GUIDUtility
+			{ "String_InputGUID", "GUID를 입력해 주세요" },
+			{ "NO_GUID", "해당 GUID의 에셋 경로를 찾을 수 없습니다!" },
+
 			// MaterialTemplate
 			{ "String_ReferenceMaterial", "기준 머티리얼" },
 			{ "String_GetAvatarMaterials", "아바타 머티리얼 가져오기" },
@@ -331,6 +339,10 @@ namespace Macchiato.Core {
 			{ "String_Texture", "テクスチャ" },
 			{ "String_Undo", "元に戻す" },
 			{ "String_Update", "アップデート" },
+
+			// GUIDUtility
+			{ "String_InputGUID", "GUIDを入力してください" },
+			{ "NO_GUID", "指定されたGUIDのアセットパスが見つかりません!" },
 
 			// MaterialTemplate
 			{ "String_ReferenceMaterial", "参照マテリアル" },
