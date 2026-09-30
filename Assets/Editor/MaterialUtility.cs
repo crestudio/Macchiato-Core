@@ -35,13 +35,6 @@ namespace Macchiato.Core {
 			return false;
 		}
 
-		public static bool SetFloatProperty(Material TargetMaterial, string TargetPropertyName, float NewValue) {
-			if (!TargetMaterial.HasProperty(TargetPropertyName)) return false;
-			if (Mathf.Approximately(TargetMaterial.GetFloat(TargetPropertyName), NewValue)) return false;
-			TargetMaterial.SetFloat(TargetPropertyName, NewValue);
-			return true;
-		}
-
 		public static bool SetColorProperty(Material TargetMaterial, string TargetPropertyName, Color NewColor) {
 			if (!TargetMaterial.HasProperty(TargetPropertyName)) return false;
 			if (TargetMaterial.GetColor(TargetPropertyName) == NewColor) return false;
@@ -49,14 +42,11 @@ namespace Macchiato.Core {
 			return true;
 		}
 
-		public static bool UpdateFloatProperties(Material TargetMaterial, Material ReferenceMaterial, (string PropertyName, float DefaultValue)[] TargetProperties) {
-			bool IsDirty = false;
-			foreach ((string PropertyName, float DefaultValue) TargetProperty in TargetProperties) {
-				bool HasReferenceValue = ReferenceMaterial && ReferenceMaterial.HasProperty(TargetProperty.PropertyName);
-				float NewValue = HasReferenceValue ? ReferenceMaterial.GetFloat(TargetProperty.PropertyName) : TargetProperty.DefaultValue;
-				if (SetFloatProperty(TargetMaterial, TargetProperty.PropertyName, NewValue)) IsDirty = true;
-			}
-			return IsDirty;
+		public static bool SetFloatProperty(Material TargetMaterial, string TargetPropertyName, float NewValue) {
+			if (!TargetMaterial.HasProperty(TargetPropertyName)) return false;
+			if (Mathf.Approximately(TargetMaterial.GetFloat(TargetPropertyName), NewValue)) return false;
+			TargetMaterial.SetFloat(TargetPropertyName, NewValue);
+			return true;
 		}
 
 		public static bool UpdateColorProperties(Material TargetMaterial, Material ReferenceMaterial, (string PropertyName, Color DefaultValue)[] TargetProperties) {
@@ -65,6 +55,16 @@ namespace Macchiato.Core {
 				bool HasReferenceValue = ReferenceMaterial && ReferenceMaterial.HasProperty(TargetProperty.PropertyName);
 				Color NewValue = HasReferenceValue ? ReferenceMaterial.GetColor(TargetProperty.PropertyName) : TargetProperty.DefaultValue;
 				if (SetColorProperty(TargetMaterial, TargetProperty.PropertyName, NewValue)) IsDirty = true;
+			}
+			return IsDirty;
+		}
+
+		public static bool UpdateFloatProperties(Material TargetMaterial, Material ReferenceMaterial, (string PropertyName, float DefaultValue)[] TargetProperties) {
+			bool IsDirty = false;
+			foreach ((string PropertyName, float DefaultValue) TargetProperty in TargetProperties) {
+				bool HasReferenceValue = ReferenceMaterial && ReferenceMaterial.HasProperty(TargetProperty.PropertyName);
+				float NewValue = HasReferenceValue ? ReferenceMaterial.GetFloat(TargetProperty.PropertyName) : TargetProperty.DefaultValue;
+				if (SetFloatProperty(TargetMaterial, TargetProperty.PropertyName, NewValue)) IsDirty = true;
 			}
 			return IsDirty;
 		}
