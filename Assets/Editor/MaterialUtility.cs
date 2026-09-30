@@ -9,6 +9,15 @@ namespace Macchiato.Core {
 
 	public static class MaterialUtility {
 
+		public static bool ApplyValueAfterCheck = true;
+
+		public static bool IsPropertyActive(Material TargetMaterial, string TargetPropertyName, float TargetValue = 1f) {
+			if (!ApplyValueAfterCheck) return true;
+			if (!TargetMaterial.HasProperty(TargetPropertyName)) return false;
+			if (Mathf.Approximately(TargetMaterial.GetFloat(TargetPropertyName), TargetValue)) return true;
+			return false;
+		}
+
 		public static bool SetFloatProperty(Material TargetMaterial, string TargetPropertyName, float NewValue) {
 			if (!TargetMaterial.HasProperty(TargetPropertyName)) return false;
 			if (Mathf.Approximately(TargetMaterial.GetFloat(TargetPropertyName), NewValue)) return false;
