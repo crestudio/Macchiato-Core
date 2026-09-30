@@ -98,18 +98,14 @@ namespace Macchiato.Core {
 			{ "String_Add", "Add" },
 			{ "String_After", "After" },
 			{ "String_AnimationClip", "Animation Clip" },
-			{ "String_AnimationOrigin", "Animation Origin" },
-			{ "String_AnimationStrength", "Animation Strength" },
 			{ "String_Apply", "Apply" },
 			{ "String_Avatar", "Avatar" },
 			{ "String_AvatarAuthor", "Avatar Author" },
-			{ "String_AvatarOrigin", "Avatar Origin" },
 			{ "String_Before", "Before" },
 			{ "String_BlendShape", "Blendshape" },
 			{ "String_Browse", "Browse" },
 			{ "String_Close", "Close" },
 			{ "String_FXLayer", "FX Layer" },
-			{ "String_GetPosition", "Get cheek bone position" },
 			{ "String_HeadMesh", "Face Mesh" },
 			{ "String_Hide", "Hide" },
 			{ "String_Language", "Language" },
@@ -218,25 +214,14 @@ namespace Macchiato.Core {
 			{ "String_GPUInstancing", "Update GPU Instancing" },
 			{ "String_GlobalIllumination", "Update Global Illumination" },
 
+			{ "String_ApplyValueAfterCheck", "Apply Values Only When Active" },
+
 			{ "COMPLETED_UPDATEMATERIAL", "Modified {0} materials" },
 			{ "NOT_SUPPORT_SHADER", "{0} shader is not supported"},
 
 			// TextureReplacer
 			{ "String_Null", "Clearing the item will remove the texture from the material" },
-			{ "NO_DATA", "The texture cannot be found in the specified object" },
-
-			// 성공 코드
-			{ "COMPLETED_GETPOSITION", "Imported cheek bone origin position" },
-			{ "COMPLETED_UPDATE", "Updated the offset of the animation clip" },
-
-			// 에러 코드
-			{ "NO_ANIMATOR", "Not found Animator Component in the Avatar!" },
-			{ "NO_ANIMSHAPEKEY", "There are no face-related shape keys in the FX layer animation" },
-			{ "NO_CHEEKBONE", "Not found any cheek bone in the Avatar!" },
-			{ "NO_CLIPS", "There is no animation clip to update!" },
-			{ "NO_FACEMESH", "Face mesh not found" },
-			{ "NO_PREFAB_MODE", "This operation is not available in Prefab Mode" },
-			{ "NO_SHAPEKEY", "No shapekeys with values set" }
+			{ "NO_DATA", "The texture cannot be found in the specified object" }
 		};
 
 		// 한국어 사전 데이터
@@ -245,18 +230,14 @@ namespace Macchiato.Core {
 			{ "String_Add", "추가" },
 			{ "String_After", "변경 후" },
 			{ "String_AnimationClip", "애니메이션 클립" },
-			{ "String_AnimationOrigin", "애니메이션 본 원점" },
-			{ "String_AnimationStrength", "애니메이션 강도" },
 			{ "String_Apply", "적용" },
 			{ "String_Avatar", "아바타" },
 			{ "String_AvatarAuthor", "아바타 제작자" },
-			{ "String_AvatarOrigin", "아바타 볼 원점" },
 			{ "String_Before", "변경 전" },
 			{ "String_BlendShape", "쉐이프키" },
 			{ "String_Browse", "찾아보기" },
 			{ "String_Close", "닫기" },
 			{ "String_FXLayer", "FX 레이어" },
-			{ "String_GetPosition", "볼 데이터 가져오기" },
 			{ "String_HeadMesh", "얼굴 메쉬" },
 			{ "String_Hide", "숨기기" },
 			{ "String_Language", "언어" },
@@ -367,25 +348,14 @@ namespace Macchiato.Core {
 			{ "String_GPUInstancing", "GPU Instancing 업데이트" },
 			{ "String_GlobalIllumination", "Global Illumination 업데이트" },
 
+			{ "String_ApplyValueAfterCheck", "활성화된 경우에만 값 적용" },
+
 			{ "COMPLETED_UPDATEMATERIAL", "{0}개의 머티리얼이 수정되었습니다" },
 			{ "NOT_SUPPORT_SHADER", "{0} 셰이더는 지원하지 않습니다" },
 
 			// TextureReplacer
 			{ "String_Null", "항목을 비우면 해당 텍스쳐를 머테리얼에서 제거합니다" },
-			{ "NO_DATA", "해당 오브젝트에서 텍스쳐를 찾을 수 없습니다" },
-
-			// 성공 코드
-			{ "COMPLETED_GETPOSITION", "볼 위치 데이터를 가져왔습니다" },
-			{ "COMPLETED_UPDATE", "애니메이션 클립의 오프셋을 업데이트 하였습니다" },
-
-			// 에러 코드
-			{ "NO_ANIMATOR", "아바타에서 애니메이터를 찾을 수 없습니다!" },
-			{ "NO_ANIMSHAPEKEY", "FX 레이어의 애니메이션에서 얼굴 관련 쉐이프키가 없습니다" },
-			{ "NO_CHEEKBONE", "아바타에서 볼 본을 찾을 수 없습니다!" },
-			{ "NO_CLIPS", "작업할 애니메이션 클립이 없습니다!" },
-			{ "NO_FACEMESH", "얼굴 메쉬를 찾을 수 없습니다" },
-			{ "NO_PREFAB_MODE", "Prefab 편집 모드에서는 진행할 수 없습니다" },
-			{ "NO_SHAPEKEY", "값이 설정된 쉐이프키가 없습니다" }
+			{ "NO_DATA", "해당 오브젝트에서 텍스쳐를 찾을 수 없습니다" }
 		};
 
 		// 일본어 사전 데이터
@@ -394,18 +364,14 @@ namespace Macchiato.Core {
 			{ "String_Add", "追加" },
 			{ "String_After", "変更" },
 			{ "String_AnimationClip", "アニメーション·クリップ" },
-			{ "String_AnimationOrigin", "アニメーションほっぺの原点" },
-			{ "String_AnimationStrength", "アニメーション強盗" },
 			{ "String_Apply", "適用" },
 			{ "String_Avatar", "アバター" },
 			{ "String_AvatarAuthor", "アバター製作者" },
-			{ "String_AvatarOrigin", "アバターほっぺの原点" },
 			{ "String_Before", "既存" },
 			{ "String_BlendShape", "シェイプキー" },
 			{ "String_Browse", "参照" },
 			{ "String_Close", "閉じる" },
 			{ "String_FXLayer", "FXレイヤー" },
-			{ "String_GetPosition", "ほっぺデータのインポート" },
 			{ "String_HeadMesh", "顔メッシュ" },
 			{ "String_Hide", "非表示" },
 			{ "String_Language", "言語" },
@@ -516,25 +482,14 @@ namespace Macchiato.Core {
 			{ "String_GPUInstancing", "GPU Instancingを更新" },
 			{ "String_GlobalIllumination", "Global Illuminationを更新" },
 
+			{ "String_ApplyValueAfterCheck", "有効時のみ値を適用" },
+
 			{ "COMPLETED_UPDATEMATERIAL", "{0}個のマテリアルを変更しました" },
 			{ "NOT_SUPPORT_SHADER", "{0}シェーダーはサポートしていません" },
 
 			// TextureReplacer
 			{ "String_Null", "項目をクリアすると、該当テクスチャがマテリアルから削除されます" },
-			{ "NO_DATA", "該当オブジェクトでテクスチャを見つけることができません" },
-
-			// 성공 코드
-			{ "COMPLETED_GETPOSITION", "ほっぺ位置データを取得しました" },
-			{ "COMPLETED_UPDATE", "アニメーション·クリップのオフセットを更新しました" },
-
-			// 에러 코드
-			{ "NO_ANIMATOR", "アバターにアニメーターが見つかりません" },
-			{ "NO_ANIMSHAPEKEY", "FXレイヤーのアニメーションで顔関連のシェイプキーがありません" },
-			{ "NO_CHEEKBONE", "アバターにほっぺの骨が見つかりません！" },
-			{ "NO_CLIPS", "作業するアニメーション·クリップがありません！" },
-			{ "NO_FACEMESH", "顔のメッシュが見つかりません" },
-			{ "NO_PREFAB_MODE", "Prefab編集モードでは実行できません" },
-			{ "NO_SHAPEKEY", "値が設定されたシェイプキーがありません" }
+			{ "NO_DATA", "該当オブジェクトでテクスチャを見つけることができません" }
 		};
 
 		static readonly Dictionary<AvatarAuthor, string[]> AvatarAuthorNameList = new Dictionary<AvatarAuthor, string[]>() {
