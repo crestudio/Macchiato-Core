@@ -7,7 +7,7 @@
 
 namespace Macchiato.Core {
 
-	public static class ColorUtility {
+	public static class ColorHelper {
 
 		public struct Oklab {
 			public float L, a, b;
