@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
+using UnityEditor;
 using UnityEngine;
 
 /*
@@ -20,6 +22,27 @@ namespace Macchiato.Core {
 
 		public static bool ApplyValueAfterCheck = true;
 
+		static List<string> GetOverriddenPropertyNameList(Material TargetMaterial) {
+			List<string> NewOverriddenProperties = new List<string>();
+			if (!TargetMaterial || !IsVariantMaterial(TargetMaterial)) return NewOverriddenProperties;
+			SerializedObject SerializedMaterial = new SerializedObject(TargetMaterial);
+			SerializedProperty SerializedProperties = SerializedMaterial.FindProperty("m_SavedProperties");
+			if (SerializedProperties == null) return NewOverriddenProperties;
+			SerializedProperty SerializedOverriddenProperties = SerializedProperties.FindPropertyRelative("m_OverriddenProperties");
+			if (SerializedOverriddenProperties == null || !SerializedOverriddenProperties.isArray) return NewOverriddenProperties;
+			int OverriddenCount = SerializedOverriddenProperties.arraySize;
+			for (int Index = 0; Index < OverriddenCount; Index++) {
+				SerializedProperty TargetSerializedProperty = SerializedOverriddenProperties.GetArrayElementAtIndex(Index);
+				if (TargetSerializedProperty != null) {
+					string OverriddenPropertyName = TargetSerializedProperty.stringValue;
+					if (!string.IsNullOrEmpty(OverriddenPropertyName) && !NewOverriddenProperties.Contains(OverriddenPropertyName)) {
+						NewOverriddenProperties.Add(OverriddenPropertyName);
+					}
+				}
+			}
+			return NewOverriddenProperties;
+		}
+
 		public static ShaderType GetShaderType(Material TargetMaterial) {
 			string TargetShaderName = TargetMaterial.shader.name;
 			if (TargetShaderName.Contains("lilToon", StringComparison.OrdinalIgnoreCase)) return ShaderType.lilToon;
@@ -28,10 +51,27 @@ namespace Macchiato.Core {
 			return ShaderType.Unknown;
 		}
 
+		public static bool HasOverriddenProperty(Material TargetMaterial, string TargetProperty) {
+			if (!TargetMaterial || string.IsNullOrEmpty(TargetProperty)) return false;
+			if (!IsVariantMaterial(TargetMaterial)) return false;
+			List<string> OverriddenProperties = GetOverriddenPropertyNameList(TargetMaterial);
+			return OverriddenProperties.Contains(TargetProperty);
+		}
+
 		public static bool IsPropertyActive(Material TargetMaterial, string TargetPropertyName, float TargetValue = 1f) {
 			if (!ApplyValueAfterCheck) return true;
 			if (!TargetMaterial.HasProperty(TargetPropertyName)) return false;
 			if (Mathf.Approximately(TargetMaterial.GetFloat(TargetPropertyName), TargetValue)) return true;
+			return false;
+		}
+
+		public static bool IsVariantMaterial(Material TargetMaterial) {
+			if (!TargetMaterial) return false;
+			SerializedObject SerializedMaterial = new SerializedObject(TargetMaterial);
+			SerializedProperty SerializedParent = SerializedMaterial.FindProperty("m_Parent");
+			if (SerializedParent != null && SerializedParent.objectReferenceValue) {
+				return true;
+			}
 			return false;
 		}
 
