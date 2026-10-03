@@ -316,8 +316,8 @@ namespace Macchiato.Core {
 			{ "NO_GUID", "해당 GUID의 에셋 경로를 찾을 수 없습니다!" },
 
 			// MaterialTemplate
-			{ "String_ReferenceMaterial", "참조 머티리얼" },
-			{ "String_GetAvatarMaterials", "아바타 머티리얼 가져오기" },
+			{ "String_ReferenceMaterial", "참조 머테리얼" },
+			{ "String_GetAvatarMaterials", "아바타 머테리얼 가져오기" },
 
 			{ "String_Common", "일반" },
 			{ "String_DeepCopy", "모두 복사" },
@@ -402,7 +402,7 @@ namespace Macchiato.Core {
 
 			{ "String_ApplyValueAfterCheck", "활성화된 경우에만 값 적용" },
 
-			{ "COMPLETED_UPDATEMATERIAL", "{0}개의 머티리얼이 수정되었습니다" },
+			{ "COMPLETED_UPDATEMATERIAL", "{0}개의 머테리얼이 수정되었습니다" },
 			{ "NOT_SUPPORT_SHADER", "{0} 셰이더는 지원하지 않습니다" },
 
 			// TextureReplacer
