@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 
-using UnityEditor;
 using UnityEngine;
 
 /*
@@ -20,8 +18,6 @@ namespace Macchiato.Core {
 			UnityChanToonShader
 		}
 
-		public static bool ApplyValueAfterCheck = true;
-
 		public static ShaderType GetShaderType(Material TargetMaterial) {
 			string TargetShaderName = TargetMaterial.shader.name;
 			if (TargetShaderName.Contains("lilToon", StringComparison.OrdinalIgnoreCase)) return ShaderType.lilToon;
@@ -35,8 +31,8 @@ namespace Macchiato.Core {
 			return TargetMaterial.IsPropertyOverriden(TargetProperty);
 		}
 
-		public static bool IsPropertyActive(Material TargetMaterial, string TargetPropertyName, float TargetValue = 1f) {
-			if (!ApplyValueAfterCheck) return true;
+		public static bool IsPropertyActive(Material TargetMaterial, string TargetPropertyName, bool CheckActive, float TargetValue = 1f) {
+			if (!CheckActive) return true;
 			if (!TargetMaterial.HasProperty(TargetPropertyName)) return false;
 			if (Mathf.Approximately(TargetMaterial.GetFloat(TargetPropertyName), TargetValue)) return true;
 			return false;
