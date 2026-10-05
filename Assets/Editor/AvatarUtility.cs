@@ -86,6 +86,7 @@ namespace Macchiato.Core {
 		public static readonly string[] ToeBoneNames = ToeBoneDictionary.Values.SelectMany(Item => Item).ToArray();
 
 		public static AnimatorController GetAnimatorController(GameObject AvatarGameObject, AnimLayerType LayerType) {
+			if (!AvatarGameObject) return null;
 			AvatarGameObject.TryGetComponent(out VRCAvatarDescriptor TargetAvatarDescriptor);
 			if (TargetAvatarDescriptor) {
 				CustomAnimLayer TargetLayer = TargetAvatarDescriptor.baseAnimationLayers.FirstOrDefault(Item => Item.type == LayerType);
@@ -183,20 +184,35 @@ namespace Macchiato.Core {
 		public static Material[] GetAvatarMaterials(GameObject AvatarGameObject) {
 			if (!AvatarGameObject) return null;
 			List<Material> NewAvatarMaterials = new List<Material>();
-			SkinnedMeshRenderer[] AvatarSkinnedMeshRenderers = AvatarGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true);
-			MeshRenderer[] AvatarMeshRenderers = AvatarGameObject.GetComponentsInChildren<MeshRenderer>(true);
-			Material[] AnimationMaterials = AssetUtility.GetAnimationMaterials(AvatarGameObject);
-			if (AvatarSkinnedMeshRenderers.Length > 0) {
-				NewAvatarMaterials.AddRange(AvatarSkinnedMeshRenderers.SelectMany(Item => Item.sharedMaterials));
-			}
-			if (AvatarMeshRenderers.Length > 0) {
-				NewAvatarMaterials.AddRange(AvatarMeshRenderers.SelectMany(Item => Item.sharedMaterials));
+			Renderer[] AvatarRenderers = AvatarGameObject.GetComponentsInChildren<Renderer>(true);
+			Material[] AnimationMaterials = GetAvatarFXAnimationMaterials(AvatarGameObject);
+			if (AvatarRenderers.Length > 0) {
+				NewAvatarMaterials.AddRange(AvatarRenderers.SelectMany(Item => Item.sharedMaterials));
 			}
 			if (AnimationMaterials.Length > 0) {
 				NewAvatarMaterials.AddRange(AnimationMaterials);
 			}
 			NewAvatarMaterials = NewAvatarMaterials.Where(Item => Item != null).Distinct().OrderBy(Item => Item.name).ToList();
 			return NewAvatarMaterials.ToArray();
+		}
+
+		public static Material[] GetAvatarFXAnimationMaterials(GameObject AvatarGameObject) {
+			if (!AvatarGameObject) return null;
+			List<Material> AnimationMaterials = new List<Material>();
+			AnimatorController AvatarFXAnimator = GetAnimatorController(AvatarGameObject, AnimLayerType.FX);
+			if (AvatarFXAnimator) {
+				AnimationClip[] AllAnimationClips = AnimatorHelper.GetAllAnimationClips(AvatarFXAnimator);
+				AnimationMaterials.AddRange(AllAnimationClips
+					.SelectMany(TargetAnimationClip => AnimationUtility.GetObjectReferenceCurveBindings(TargetAnimationClip)
+						.Where(TargetBinding => TargetBinding.type == typeof(Renderer))
+						.SelectMany(TargetBinding => AnimationUtility.GetObjectReferenceCurve(TargetAnimationClip, TargetBinding) ?? new ObjectReferenceKeyframe[0])
+						.Where(TargetKeyframe => TargetKeyframe.value is Material)
+						.Select(TargetKeyframe => TargetKeyframe.value as Material)
+					)
+				);
+			}
+			AnimationMaterials = AnimationMaterials.Where(Item => Item != null).Distinct().OrderBy(Item => Item.name).ToList();
+			return AnimationMaterials.ToArray();
 		}
 
 		public static string GetAvatarName(string TargetString) {

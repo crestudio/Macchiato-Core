@@ -75,24 +75,6 @@ namespace Macchiato.Core {
 			return CreatedPrefab;
 		}
 
-		public static Material[] GetAnimationMaterials(GameObject TargetGameObject) {
-			List<Material> AnimationMaterials = new List<Material>();
-			AnimatorController AvatarFXAnimator = AvatarUtility.GetAnimatorController(TargetGameObject, AnimLayerType.FX);
-			if (AvatarFXAnimator) {
-				AnimationClip[] AllAnimationClips = AnimatorHelper.GetAllAnimationClips(AvatarFXAnimator);
-				AnimationMaterials.AddRange(AllAnimationClips
-					.SelectMany(TargetAnimationClip => AnimationUtility.GetObjectReferenceCurveBindings(TargetAnimationClip)
-						.Where(TargetBinding => TargetBinding.type == typeof(SkinnedMeshRenderer) || TargetBinding.type == typeof(MeshRenderer))
-						.SelectMany(TargetBinding => AnimationUtility.GetObjectReferenceCurve(TargetAnimationClip, TargetBinding) ?? new ObjectReferenceKeyframe[0])
-						.Where(TargetKeyframe => TargetKeyframe.value is Material)
-						.Select(TargetKeyframe => TargetKeyframe.value as Material)
-					)
-				);
-			}
-			AnimationMaterials = AnimationMaterials.Where(Item => Item != null).Distinct().OrderBy(Item => Item.name).ToList();
-			return AnimationMaterials.ToArray();
-		}
-
 		public static string[] GetAssetGUIDs(AssetType TargetType) {
 			string SearchWord = string.Empty;
 			switch (TargetType) {
